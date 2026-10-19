@@ -1,29 +1,37 @@
 {
-  "year": "2026",
-  "cover_headline": "Own a brand that's",
-  "cover_headline_accent": "already winning.",
-  "cover_lead": "Franchise and business consultancy from Pune. We match entrepreneurs with proven brands, and handle the planning, paperwork and launch alongside them.",
-  "about_title": "We help people climb, one step at a time.",
-  "about_paragraphs": [
-    "Most new businesses spend their first year on market research, branding and trial and error. Our clients skip much of that. Unnati Ladder connects them with franchise brands that already work, and with the expertise to run them well.",
-    "For those with an idea of their own, our marketers, advisors and legal team help build a new brand properly: validating the concept, creating the identity and planning the launch."
-  ],
-  "years": "20+",
-  "clients": "500+",
-  "offices": [
-    "Pune",
-    "Bangalore",
-    "Delhi"
-  ],
-  "founder_name": "Prashant Srivastava",
-  "founder_title": "Founder & Director",
-  "founder_photo": "/prashant.jpg",
-  "founder_bio": "An MBA in Marketing and HR with a Diploma in Export Management, Prashant has spent more than 20 years in strategic planning and management, helping organisations with business development, brand expansion, marketing strategy and liaising.",
-  "founder_tags": [
-    "MBA, Marketing & HR",
-    "Diploma, Export Management",
-    "20+ years"
-  ],
+  "cover": {
+    "year": "2026",
+    "headline": "Own a brand that's",
+    "headline_accent": "already winning.",
+    "intro": "Franchise and business consultancy from Pune. We match entrepreneurs with proven brands, and handle the planning, paperwork and launch alongside them."
+  },
+  "about": {
+    "title": "We help people climb, one step at a time.",
+    "paragraphs": [
+      "Most new businesses spend their first year on market research, branding and trial and error. Our clients skip much of that. Unnati Ladder connects them with franchise brands that already work, and with the expertise to run them well.",
+      "For those with an idea of their own, our marketers, advisors and legal team help build a new brand properly: validating the concept, creating the identity and planning the launch."
+    ]
+  },
+  "numbers": {
+    "years": "20+",
+    "clients": "500+",
+    "offices": [
+      "Pune",
+      "Bangalore",
+      "Delhi"
+    ]
+  },
+  "founder": {
+    "name": "Prashant Srivastava",
+    "title": "Founder & Director",
+    "photo": "/prashant.jpg",
+    "bio": "An MBA in Marketing and HR with a Diploma in Export Management, Prashant has spent more than 20 years in strategic planning and management, helping organisations with business development, brand expansion, marketing strategy and liaising.",
+    "highlights": [
+      "MBA, Marketing & HR",
+      "Diploma, Export Management",
+      "20+ years"
+    ]
+  },
   "commercials": [
     {
       "service": "Brand franchise sign-up",
@@ -42,11 +50,13 @@
     }
   ],
   "catalogue_note": "Indicative figures. Terms vary by city and change over time; we share current figures on enquiry.",
-  "phone": "+91 93269 50999",
-  "phone2": "+91 93098 47652",
-  "whatsapp": "919326950999",
-  "email": "info@unnatiladder.com",
-  "website": "unnatiladder.com",
-  "address": "LG-03, East Court, Phoenix Market City, Viman Nagar, Pune 411014",
-  "hours": "Mon – Sat, 9:00 AM – 6:00 PM"
+  "contact": {
+    "phone": "+91 93269 50999",
+    "phone2": "+91 93098 47652",
+    "whatsapp": "919326950999",
+    "email": "info@unnatiladder.com",
+    "website": "unnatiladder.com",
+    "address": "LG-03, East Court, Phoenix Market City, Viman Nagar, Pune 411014",
+    "hours": "Mon – Sat, 9:00 AM – 6:00 PM"
+  }
 }

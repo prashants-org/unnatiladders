@@ -20,15 +20,36 @@ def load(path):
         return json.load(fh)
 
 
-C = load(os.path.join(HERE, "content.json"))
-rows = load(os.path.join(HERE, "catalogue.json"))["rows"]
+content = load(os.path.join(HERE, "content.json"))
+# Flatten the sectioned content.json into the simple keys used below
+C = {
+    "year": content["cover"]["year"],
+    "cover_headline": content["cover"]["headline"],
+    "cover_headline_accent": content["cover"]["headline_accent"],
+    "cover_lead": content["cover"]["intro"],
+    "about_title": content["about"]["title"],
+    "about_paragraphs": content["about"]["paragraphs"],
+    "years": content["numbers"]["years"],
+    "clients": content["numbers"]["clients"],
+    "offices": content["numbers"]["offices"],
+    "founder_name": content["founder"]["name"],
+    "founder_title": content["founder"]["title"],
+    "founder_photo": content["founder"]["photo"],
+    "founder_bio": content["founder"]["bio"],
+    "founder_tags": content["founder"]["highlights"],
+    "commercials": content["commercials"],
+    "catalogue_note": content["catalogue_note"],
+    **content["contact"],
+}
+# Catalogue is grouped by industry; flatten to rows with a "group" key
+rows = [dict(r, group=ind["name"]) for ind in load(os.path.join(HERE, "catalogue.json"))["industries"] for r in ind.get("rows") or []]
 site_brands = load(os.path.join(ROOT, "src", "content", "brands.json"))["brands"]
 groups = OrderedDict()
 for r in rows:
     groups.setdefault(r["group"], []).append(r)
 
 e = html.escape
-PHONE, PHONE2 = C["phone"], C.get("phone2", "")
+PHONE, PHONE2 = C["phone"], C.get("phone2") or ""
 EMAIL, WEB = C["email"], C["website"]
 ADDRESS = C["address"]
 

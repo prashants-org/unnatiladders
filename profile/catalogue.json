@@ -1,876 +1,817 @@
 {
-  "rows": [
-    {
-      "group": "Food & Beverage",
-      "brand": "Cheesiaano Pizza",
-      "area": "500–700 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹35 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "TYM Café",
-      "area": "500–700 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Cuba Libre Cuban Pub",
-      "area": "6000–8000 sq ft",
-      "fee": "₹20 L",
-      "investment": "₹2 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Cuba Libre Cuban Café",
-      "area": "5000–6000 sq ft",
-      "fee": "₹18 L",
-      "investment": "₹1.3 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Khan Saheb Fine Dine",
-      "area": "5000–6000 sq ft",
-      "fee": "₹20 L",
-      "investment": "₹1.5 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Khan Saheb Express",
-      "area": "300–400 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Sizzling Joe",
-      "area": "300–400 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Sizzling Joe Casual Dining",
-      "area": "5000–6000 sq ft",
-      "fee": "₹15 L",
-      "investment": "₹80 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Rolls Mania",
-      "area": "500–700 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹19 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Mishal Darbar",
-      "area": "300–400 sq ft",
-      "fee": "₹2 L",
-      "investment": "₹7 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Sai Café Katta",
-      "area": "300–400 sq ft",
-      "fee": "₹3.5 L",
-      "investment": "₹8 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Chai Garam",
-      "area": "300–400 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹15 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Subway",
-      "area": "1000 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹65–70 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Barista Café",
-      "area": "1000 sq ft",
-      "fee": "₹8.5 L",
-      "investment": "₹45–48 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Moti Mahal Delux",
-      "area": "1500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹75–90 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Moti Mahal Express",
-      "area": "500 sq ft",
-      "fee": "₹6 L",
-      "investment": "₹18–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Gola Sizzlers (Express)",
-      "area": "500 sq ft",
-      "fee": "₹6 L",
-      "investment": "₹18–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Gola Sizzlers",
-      "area": "1500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹80–90 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Sagar Ratna",
-      "area": "2000 sq ft",
-      "fee": "₹50 L",
-      "investment": "₹0.95–1.05 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Burger King",
-      "area": "8000 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹1–1.5 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Burger Singh",
-      "area": "1000 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹50 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Chaayos",
-      "area": "1500 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹55–60 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Domino's",
-      "area": "1200 sq ft",
-      "fee": "Nil",
-      "investment": "₹55–60 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Pizza Hut",
-      "area": "1200 sq ft",
-      "fee": "Nil",
-      "investment": "₹55–60 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Biryani Blues",
-      "area": "1200 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹45–50 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Amritsari Express",
-      "area": "750 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹15–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Masala Country",
-      "area": "1200 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹20–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Bikano Café",
-      "area": "1200 sq ft",
-      "fee": "₹12 L",
-      "investment": "₹85–95 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "CCD",
-      "area": "1000 sq ft",
-      "fee": "Nil",
-      "investment": "₹5–10 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "IMLY",
-      "area": "3000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹1.25–1.5 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Nirula's",
-      "area": "350–800 sq ft",
-      "fee": "₹4 L",
-      "investment": "₹8–14 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Carl's Jr.",
-      "area": "2000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹2–4 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Himalaya Food",
-      "area": "500 sq ft",
-      "fee": "₹2 L",
-      "investment": "₹9–20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Deoras",
-      "area": "8000 sq ft",
-      "fee": "₹30 L",
-      "investment": "₹1.5–1.75 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "MTV Roadies",
-      "area": "4000 sq ft",
-      "fee": "₹50 L",
-      "investment": "₹1.5–4 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Raasta",
-      "area": "2000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹1.15–1.75 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Boom Box",
-      "area": "1500 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹1.25–1.75 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Band Baaja Baarat",
-      "area": "1500 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹1.25–1.5 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Duty Free",
-      "area": "2000 sq ft",
-      "fee": "₹35 L",
-      "investment": "₹1.5–1.75 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "The Beer Cafe",
-      "area": "1500 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹1.5–2 Cr",
-      "model": "FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Purple Wok Co (Kiosk)",
-      "area": "150–200 sq ft",
-      "fee": "₹2 L",
-      "investment": "₹5.5 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Purple Wok Co",
-      "area": "500–700 sq ft",
-      "fee": "₹3.5 L",
-      "investment": "₹12.5 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Baba's Vada Pav",
-      "area": "200–250 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹9 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Bombay Cafe",
-      "area": "350–500 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹15 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Chai Thela",
-      "area": "200–300 sq ft",
-      "fee": "₹5.5 L",
-      "investment": "₹10 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Garam Dharam",
-      "area": "2500–3000 sq ft",
-      "fee": "₹51 L",
-      "investment": "₹2.5–3 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Garam Dharam (Large)",
-      "area": "25k–30k sq ft",
-      "fee": "₹75 L",
-      "investment": "₹5–5.5 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "KEVs",
-      "area": "150–300 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹10–17 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Talli Station Restro Bar",
-      "area": "1200–1300 sq ft",
-      "fee": "₹15 L",
-      "investment": "₹1–1.25 Cr",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Chocolate Room",
-      "area": "350–650 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹17–22 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Food & Beverage",
-      "brand": "Chicago Pizza",
-      "area": "300–600 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹17–20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Bakery & Desserts",
-      "brand": "Monginis",
-      "area": "350 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹15–18 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Bakery & Desserts",
-      "brand": "Pirajees",
-      "area": "150–200 sq ft",
-      "fee": "₹1.5 L",
-      "investment": "₹8 L",
-      "model": "FOFO (Pune only)"
-    },
-    {
-      "group": "Grocery & Supermarkets",
-      "brand": "Jmart",
-      "area": "2000 sq ft",
-      "fee": "Nil",
-      "investment": "₹10 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Grocery & Supermarkets",
-      "brand": "Easyday",
-      "area": "2000 sq ft",
-      "fee": "Nil",
-      "investment": "₹10 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Grocery & Supermarkets",
-      "brand": "24Seven",
-      "area": "2000 sq ft",
-      "fee": "Nil",
-      "investment": "₹10 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Grocery & Supermarkets",
-      "brand": "Necessity",
-      "area": "1k–20k sq ft",
-      "fee": "₹10 L",
-      "investment": "₹2100/sq ft",
-      "model": "FOCO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Daiso",
-      "area": "500–1000 sq ft",
-      "fee": "₹2.5 L",
-      "investment": "₹15–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Skechers",
-      "area": "900–1000 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹65–75 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Tanishq",
-      "area": "4000–8000 sq ft",
-      "fee": "₹2 L",
-      "investment": "₹15–20 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "V-Mart",
-      "area": "8000 sq ft",
-      "fee": "Nil",
-      "investment": "₹10 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Unlimited (Arvind Group)",
-      "area": "9000 sq ft",
-      "fee": "Nil",
-      "investment": "₹1.5 Cr",
-      "model": "Lease"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Linen Club",
-      "area": "1000 sq ft",
-      "fee": "Nil",
-      "investment": "₹65–75 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Jockey",
-      "area": "1000 sq ft",
-      "fee": "Nil",
-      "investment": "₹45–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Biba / Rangriti",
-      "area": "1000 sq ft",
-      "fee": "Nil",
-      "investment": "₹45–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "COBB",
-      "area": "1000 sq ft",
-      "fee": "Nil",
-      "investment": "₹20–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Arrow",
-      "area": "1500 sq ft",
-      "fee": "Nil",
-      "investment": "₹45 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "U.S. Polo Assn.",
-      "area": "1500 sq ft",
-      "fee": "Nil",
-      "investment": "₹55 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Vero Moda / Only",
-      "area": "2000 sq ft",
-      "fee": "Nil",
-      "investment": "₹75 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Easy Buy",
-      "area": "4000–5000 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹80–90 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Melissa",
-      "area": "700–800 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹55–60 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "Me & Mom",
-      "area": "800–1500 sq ft",
-      "fee": "₹1 L",
-      "investment": "₹35 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Fashion & Retail",
-      "brand": "StreetWear Retail",
-      "area": "300–2500 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹15–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "Healing Hands Clinic",
-      "area": "2500–3000 sq ft",
-      "fee": "₹15 L",
-      "investment": "₹50 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "Genericart (Store)",
-      "area": "300–400 sq ft",
-      "fee": "₹1 L",
-      "investment": "₹10 L",
-      "model": "Exclusive store"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "Genericart (District)",
-      "area": "No space needed",
-      "fee": "₹10 L",
-      "investment": "₹10 L",
-      "model": "Distributor"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "Genericart (State)",
-      "area": "No space needed",
-      "fee": "₹30 L",
-      "investment": "₹30 L",
-      "model": "Distributor"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "Sanjeevani Medicals",
-      "area": "300–700 sq ft",
-      "fee": "₹3.5 L",
-      "investment": "₹15 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Healthcare",
-      "brand": "SRL Diagnostics",
-      "area": "2500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹85–90 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Salon & Wellness",
-      "brand": "Affinity Express",
-      "area": "1500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹65–70 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Salon & Wellness",
-      "brand": "Cut & Style",
-      "area": "1500 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹40–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Salon & Wellness",
-      "brand": "Star Salon",
-      "area": "1500 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹55–65 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Salon & Wellness",
-      "brand": "VLCC",
-      "area": "1500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹55–60 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Salon & Wellness",
-      "brand": "VLCC Wellness",
-      "area": "1500 sq ft",
-      "fee": "₹10 L",
-      "investment": "₹60 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Sporty Beans",
-      "area": "1500–1700 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹10 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Decathlon",
-      "area": "20000 sq ft",
-      "fee": "Nil",
-      "investment": "₹15 L",
-      "model": "Lease"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Seven (MS Dhoni)",
-      "area": "800 sq ft",
-      "fee": "Nil",
-      "investment": "₹45 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Sports Station",
-      "area": "1500 sq ft",
-      "fee": "Nil",
-      "investment": "₹30–35 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Shoe Tree",
-      "area": "1500 sq ft",
-      "fee": "Nil",
-      "investment": "₹30–35 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Lotto",
-      "area": "600 sq ft",
-      "fee": "Nil",
-      "investment": "₹15–20 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Value Station",
-      "area": "4500–5000 sq ft",
-      "fee": "Nil",
-      "investment": "₹1.25 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "Play Gym",
-      "area": "3500 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹65–75 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Sports & Fitness",
-      "brand": "MTV Gym",
-      "area": "3000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹85–90 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Makoons Play School",
-      "area": "2000 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹13–15 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Little Millennium",
-      "area": "2000 sq ft",
-      "fee": "₹5 L",
-      "investment": "₹20–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Star Academy",
-      "area": "1500 sq ft",
-      "fee": "₹8 L",
-      "investment": "₹34–42 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Education",
-      "brand": "CADD Centre",
-      "area": "2500 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹15–25 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Millennium World School",
-      "area": "45000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹15 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Jaipuria School",
-      "area": "45000 sq ft",
-      "fee": "₹25 L",
-      "investment": "₹12–15 Cr",
-      "model": "FOFO"
-    },
-    {
-      "group": "Education",
-      "brand": "Takshila Coaching",
-      "area": "2500 sq ft",
-      "fee": "₹15–25 L",
-      "investment": "₹35–50 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Automotive",
-      "brand": "The Car Laundry (Outlet)",
-      "area": "300–700 sq ft",
-      "fee": "₹4 L",
-      "investment": "₹10–18 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Automotive",
-      "brand": "The Car Laundry (Mobile)",
-      "area": "No space needed",
-      "fee": "₹4 L",
-      "investment": "₹8 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Automotive",
-      "brand": "The Car Laundry (Starter)",
-      "area": "No space needed",
-      "fee": "₹1 L",
-      "investment": "₹6 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Automotive",
-      "brand": "GO Waterless (Mobile)",
-      "area": "No space needed",
-      "fee": "₹3 L",
-      "investment": "₹3 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Automotive",
-      "brand": "GO Waterless (Outlet)",
-      "area": "300–700 sq ft",
-      "fee": "₹4 L",
-      "investment": "₹10–18 L",
-      "model": "FOFO / FOCO"
-    },
-    {
-      "group": "Equipment",
-      "brand": "Beth Living (Kitchen)",
-      "area": "500–700 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹23 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Equipment",
-      "brand": "Beth Living (Kitchen)",
-      "area": "500–700 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹25 L",
-      "model": "FOCO"
-    },
-    {
-      "group": "Equipment",
-      "brand": "Microsidd (Medical)",
-      "area": "500–700 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹21 L",
-      "model": "FOFO"
-    },
-    {
-      "group": "Equipment",
-      "brand": "Microsidd (Medical)",
-      "area": "500–700 sq ft",
-      "fee": "₹3 L",
-      "investment": "₹21 L",
-      "model": "FOCO"
+  "industries": [
+    {
+      "name": "Food & Beverage",
+      "rows": [
+        {
+          "brand": "Cheesiaano Pizza",
+          "area": "500–700 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹35 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "TYM Café",
+          "area": "500–700 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹20 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Cuba Libre Cuban Pub",
+          "area": "6000–8000 sq ft",
+          "fee": "₹20 L",
+          "investment": "₹2 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Cuba Libre Cuban Café",
+          "area": "5000–6000 sq ft",
+          "fee": "₹18 L",
+          "investment": "₹1.3 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Khan Saheb Fine Dine",
+          "area": "5000–6000 sq ft",
+          "fee": "₹20 L",
+          "investment": "₹1.5 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Khan Saheb Express",
+          "area": "300–400 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹20 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Sizzling Joe",
+          "area": "300–400 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹20 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Sizzling Joe Casual Dining",
+          "area": "5000–6000 sq ft",
+          "fee": "₹15 L",
+          "investment": "₹80 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Rolls Mania",
+          "area": "500–700 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹19 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Mishal Darbar",
+          "area": "300–400 sq ft",
+          "fee": "₹2 L",
+          "investment": "₹7 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Sai Café Katta",
+          "area": "300–400 sq ft",
+          "fee": "₹3.5 L",
+          "investment": "₹8 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Chai Garam",
+          "area": "300–400 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹15 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Subway",
+          "area": "1000 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹65–70 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Barista Café",
+          "area": "1000 sq ft",
+          "fee": "₹8.5 L",
+          "investment": "₹45–48 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Moti Mahal Delux",
+          "area": "1500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹75–90 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Moti Mahal Express",
+          "area": "500 sq ft",
+          "fee": "₹6 L",
+          "investment": "₹18–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Gola Sizzlers (Express)",
+          "area": "500 sq ft",
+          "fee": "₹6 L",
+          "investment": "₹18–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Gola Sizzlers",
+          "area": "1500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹80–90 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Sagar Ratna",
+          "area": "2000 sq ft",
+          "fee": "₹50 L",
+          "investment": "₹0.95–1.05 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Burger King",
+          "area": "8000 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹1–1.5 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Burger Singh",
+          "area": "1000 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹50 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Chaayos",
+          "area": "1500 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹55–60 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Domino's",
+          "area": "1200 sq ft",
+          "fee": "Nil",
+          "investment": "₹55–60 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Pizza Hut",
+          "area": "1200 sq ft",
+          "fee": "Nil",
+          "investment": "₹55–60 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Biryani Blues",
+          "area": "1200 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹45–50 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Amritsari Express",
+          "area": "750 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹15–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Masala Country",
+          "area": "1200 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹20–50 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Bikano Café",
+          "area": "1200 sq ft",
+          "fee": "₹12 L",
+          "investment": "₹85–95 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "CCD",
+          "area": "1000 sq ft",
+          "fee": "Nil",
+          "investment": "₹5–10 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "IMLY",
+          "area": "3000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹1.25–1.5 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Nirula's",
+          "area": "350–800 sq ft",
+          "fee": "₹4 L",
+          "investment": "₹8–14 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Carl's Jr.",
+          "area": "2000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹2–4 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Himalaya Food",
+          "area": "500 sq ft",
+          "fee": "₹2 L",
+          "investment": "₹9–20 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Deoras",
+          "area": "8000 sq ft",
+          "fee": "₹30 L",
+          "investment": "₹1.5–1.75 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "MTV Roadies",
+          "area": "4000 sq ft",
+          "fee": "₹50 L",
+          "investment": "₹1.5–4 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Raasta",
+          "area": "2000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹1.15–1.75 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Boom Box",
+          "area": "1500 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹1.25–1.75 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Band Baaja Baarat",
+          "area": "1500 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹1.25–1.5 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Duty Free",
+          "area": "2000 sq ft",
+          "fee": "₹35 L",
+          "investment": "₹1.5–1.75 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "The Beer Cafe",
+          "area": "1500 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹1.5–2 Cr",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Purple Wok Co (Kiosk)",
+          "area": "150–200 sq ft",
+          "fee": "₹2 L",
+          "investment": "₹5.5 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Purple Wok Co",
+          "area": "500–700 sq ft",
+          "fee": "₹3.5 L",
+          "investment": "₹12.5 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Baba's Vada Pav",
+          "area": "200–250 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹9 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "Bombay Cafe",
+          "area": "350–500 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹15 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "Chai Thela",
+          "area": "200–300 sq ft",
+          "fee": "₹5.5 L",
+          "investment": "₹10 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Garam Dharam",
+          "area": "2500–3000 sq ft",
+          "fee": "₹51 L",
+          "investment": "₹2.5–3 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Garam Dharam (Large)",
+          "area": "25k–30k sq ft",
+          "fee": "₹75 L",
+          "investment": "₹5–5.5 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "KEVs",
+          "area": "150–300 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹10–17 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "Talli Station Restro Bar",
+          "area": "1200–1300 sq ft",
+          "fee": "₹15 L",
+          "investment": "₹1–1.25 Cr",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "Chocolate Room",
+          "area": "350–650 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹17–22 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Chicago Pizza",
+          "area": "300–600 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹17–20 L",
+          "model": "FOFO"
+        }
+      ]
+    },
+    {
+      "name": "Bakery & Desserts",
+      "rows": [
+        {
+          "brand": "Monginis",
+          "area": "350 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹15–18 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Pirajees",
+          "area": "150–200 sq ft",
+          "fee": "₹1.5 L",
+          "investment": "₹8 L",
+          "model": "FOFO (Pune only)"
+        }
+      ]
+    },
+    {
+      "name": "Grocery & Supermarkets",
+      "rows": [
+        {
+          "brand": "Jmart",
+          "area": "2000 sq ft",
+          "fee": "Nil",
+          "investment": "₹10 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Easyday",
+          "area": "2000 sq ft",
+          "fee": "Nil",
+          "investment": "₹10 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "24Seven",
+          "area": "2000 sq ft",
+          "fee": "Nil",
+          "investment": "₹10 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Necessity",
+          "area": "1k–20k sq ft",
+          "fee": "₹10 L",
+          "investment": "₹2100/sq ft",
+          "model": "FOCO"
+        }
+      ]
+    },
+    {
+      "name": "Fashion & Retail",
+      "rows": [
+        {
+          "brand": "Daiso",
+          "area": "500–1000 sq ft",
+          "fee": "₹2.5 L",
+          "investment": "₹15–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Skechers",
+          "area": "900–1000 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹65–75 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Tanishq",
+          "area": "4000–8000 sq ft",
+          "fee": "₹2 L",
+          "investment": "₹15–20 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "V-Mart",
+          "area": "8000 sq ft",
+          "fee": "Nil",
+          "investment": "₹10 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Unlimited (Arvind Group)",
+          "area": "9000 sq ft",
+          "fee": "Nil",
+          "investment": "₹1.5 Cr",
+          "model": "Lease"
+        },
+        {
+          "brand": "Linen Club",
+          "area": "1000 sq ft",
+          "fee": "Nil",
+          "investment": "₹65–75 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Jockey",
+          "area": "1000 sq ft",
+          "fee": "Nil",
+          "investment": "₹45–50 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Biba / Rangriti",
+          "area": "1000 sq ft",
+          "fee": "Nil",
+          "investment": "₹45–50 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "COBB",
+          "area": "1000 sq ft",
+          "fee": "Nil",
+          "investment": "₹20–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Arrow",
+          "area": "1500 sq ft",
+          "fee": "Nil",
+          "investment": "₹45 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "U.S. Polo Assn.",
+          "area": "1500 sq ft",
+          "fee": "Nil",
+          "investment": "₹55 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Vero Moda / Only",
+          "area": "2000 sq ft",
+          "fee": "Nil",
+          "investment": "₹75 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Easy Buy",
+          "area": "4000–5000 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹80–90 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Melissa",
+          "area": "700–800 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹55–60 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Me & Mom",
+          "area": "800–1500 sq ft",
+          "fee": "₹1 L",
+          "investment": "₹35 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "StreetWear Retail",
+          "area": "300–2500 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹15–50 L",
+          "model": "FOFO"
+        }
+      ]
+    },
+    {
+      "name": "Healthcare",
+      "rows": [
+        {
+          "brand": "Healing Hands Clinic",
+          "area": "2500–3000 sq ft",
+          "fee": "₹15 L",
+          "investment": "₹50 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Genericart (Store)",
+          "area": "300–400 sq ft",
+          "fee": "₹1 L",
+          "investment": "₹10 L",
+          "model": "Exclusive store"
+        },
+        {
+          "brand": "Genericart (District)",
+          "area": "No space needed",
+          "fee": "₹10 L",
+          "investment": "₹10 L",
+          "model": "Distributor"
+        },
+        {
+          "brand": "Genericart (State)",
+          "area": "No space needed",
+          "fee": "₹30 L",
+          "investment": "₹30 L",
+          "model": "Distributor"
+        },
+        {
+          "brand": "Sanjeevani Medicals",
+          "area": "300–700 sq ft",
+          "fee": "₹3.5 L",
+          "investment": "₹15 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "SRL Diagnostics",
+          "area": "2500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹85–90 L",
+          "model": "FOFO"
+        }
+      ]
+    },
+    {
+      "name": "Salon & Wellness",
+      "rows": [
+        {
+          "brand": "Affinity Express",
+          "area": "1500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹65–70 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Cut & Style",
+          "area": "1500 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹40–50 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Star Salon",
+          "area": "1500 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹55–65 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "VLCC",
+          "area": "1500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹55–60 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "VLCC Wellness",
+          "area": "1500 sq ft",
+          "fee": "₹10 L",
+          "investment": "₹60 L",
+          "model": "FOCO"
+        }
+      ]
+    },
+    {
+      "name": "Sports & Fitness",
+      "rows": [
+        {
+          "brand": "Sporty Beans",
+          "area": "1500–1700 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹10 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Decathlon",
+          "area": "20000 sq ft",
+          "fee": "Nil",
+          "investment": "₹15 L",
+          "model": "Lease"
+        },
+        {
+          "brand": "Seven (MS Dhoni)",
+          "area": "800 sq ft",
+          "fee": "Nil",
+          "investment": "₹45 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Sports Station",
+          "area": "1500 sq ft",
+          "fee": "Nil",
+          "investment": "₹30–35 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Shoe Tree",
+          "area": "1500 sq ft",
+          "fee": "Nil",
+          "investment": "₹30–35 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Lotto",
+          "area": "600 sq ft",
+          "fee": "Nil",
+          "investment": "₹15–20 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Value Station",
+          "area": "4500–5000 sq ft",
+          "fee": "Nil",
+          "investment": "₹1.25 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Play Gym",
+          "area": "3500 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹65–75 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "MTV Gym",
+          "area": "3000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹85–90 L",
+          "model": "FOFO"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "rows": [
+        {
+          "brand": "Makoons Play School",
+          "area": "2000 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹13–15 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Little Millennium",
+          "area": "2000 sq ft",
+          "fee": "₹5 L",
+          "investment": "₹20–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Star Academy",
+          "area": "1500 sq ft",
+          "fee": "₹8 L",
+          "investment": "₹34–42 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "CADD Centre",
+          "area": "2500 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹15–25 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Millennium World School",
+          "area": "45000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹15 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Jaipuria School",
+          "area": "45000 sq ft",
+          "fee": "₹25 L",
+          "investment": "₹12–15 Cr",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Takshila Coaching",
+          "area": "2500 sq ft",
+          "fee": "₹15–25 L",
+          "investment": "₹35–50 L",
+          "model": "FOFO"
+        }
+      ]
+    },
+    {
+      "name": "Automotive",
+      "rows": [
+        {
+          "brand": "The Car Laundry (Outlet)",
+          "area": "300–700 sq ft",
+          "fee": "₹4 L",
+          "investment": "₹10–18 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "The Car Laundry (Mobile)",
+          "area": "No space needed",
+          "fee": "₹4 L",
+          "investment": "₹8 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "The Car Laundry (Starter)",
+          "area": "No space needed",
+          "fee": "₹1 L",
+          "investment": "₹6 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "GO Waterless (Mobile)",
+          "area": "No space needed",
+          "fee": "₹3 L",
+          "investment": "₹3 L",
+          "model": "FOFO / FOCO"
+        },
+        {
+          "brand": "GO Waterless (Outlet)",
+          "area": "300–700 sq ft",
+          "fee": "₹4 L",
+          "investment": "₹10–18 L",
+          "model": "FOFO / FOCO"
+        }
+      ]
+    },
+    {
+      "name": "Equipment",
+      "rows": [
+        {
+          "brand": "Beth Living (Kitchen)",
+          "area": "500–700 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹23 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Beth Living (Kitchen)",
+          "area": "500–700 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹25 L",
+          "model": "FOCO"
+        },
+        {
+          "brand": "Microsidd (Medical)",
+          "area": "500–700 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹21 L",
+          "model": "FOFO"
+        },
+        {
+          "brand": "Microsidd (Medical)",
+          "area": "500–700 sq ft",
+          "fee": "₹3 L",
+          "investment": "₹21 L",
+          "model": "FOCO"
+        }
+      ]
     }
   ]
 }

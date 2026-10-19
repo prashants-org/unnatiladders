@@ -1,6 +1,6 @@
-# Unnati Ladder admin (Sveltia CMS). Open /admin/ on the live site.
-# Every save becomes a commit in the GitHub repo below; the deploy workflow then
-# rebuilds the website and regenerates the company profile PDF (about 2 minutes).
+# Unnati Ladder admin (Sveltia CMS) at https://unnatiladder.com/admin/
+# Every save is a commit to the repo below. The "Deploy site" workflow then rebuilds
+# the website and the company profile PDF; changes are live in about 2 minutes.
 
 backend:
   name: github
@@ -15,18 +15,26 @@ site_url: https://unnatiladder.com
 display_url: https://unnatiladder.com
 logo_url: /favicon.svg
 
-# Default upload location (brand logos and photos)
+# Uploaded brand logos and photos
 media_folder: public/brands
 public_folder: /brands
 
+# The live preview pane isn't useful for these data files; give the form the full width.
+editor:
+  preview: false
+
 collections:
-  # ---------------------------------------------------------------- Website brands
+  # ============================================================== WEBSITE
   - name: website
-    label: Website
+    label: Website brands
+    icon: storefront
+    description: >-
+      The brands shown on the Franchises page and the homepage. Changes go live
+      about 2 minutes after you press Save.
     files:
       - name: brands
         label: Franchise brands
-        description: Brands shown on the Franchises page and homepage. Add, edit, reorder or remove brands here.
+        icon: storefront
         file: src/content/brands.json
         format: json
         fields:
@@ -34,91 +42,187 @@ collections:
             label: Brands
             label_singular: Brand
             widget: list
-            summary: "{{fields.name}} · {{fields.category}}"
+            collapsed: true
+            summary: "{{fields.name}}  ·  {{fields.category}}"
+            hint: >-
+              Use “Add Brand” to add one, drag brands to change their order on the website,
+              or click a brand to edit it. Tick “Show on homepage” for up to 6 favourites.
             fields:
-              - { name: name, label: Brand name, widget: string }
+              - name: name
+                label: Brand name
+                widget: string
+                hint: Exactly as it should appear on the website, e.g. “The Beer Cafe”.
               - name: category
                 label: Industry
-                widget: string
-                hint: "Use an existing industry so filters stay tidy: Food & Beverage, Automotive, Healthcare, Home Services (or a new one)."
+                widget: select
+                options: &industries ["Food & Beverage", "Bakery & Desserts", "Grocery & Supermarkets", "Fashion & Retail", "Healthcare", "Salon & Wellness", "Sports & Fitness", "Education", "Automotive", "Home Services", "Equipment", "Other"]
+                hint: Used for the filter buttons on the Franchises page.
               - name: image
                 label: Logo or photo
                 widget: image
-                hint: "Best: a 500 × 300 px JPG or PNG with a white background."
+                hint: "Upload a JPG or PNG, ideally 500 × 300 px with a white background."
               - name: image_type
-                label: Image type
+                label: How should the image be shown?
                 widget: select
                 default: logo
                 options:
-                  - { label: "Logo (shown whole on white)", value: logo }
-                  - { label: "Photo (fills the card)", value: photo }
-              - { name: investment, label: Investment, widget: string, required: false, hint: "e.g. ₹10–15 L. Leave empty to show “Shared on enquiry”." }
-              - { name: format, label: Format, widget: string, required: false, hint: "e.g. Kiosk · Café. Leave empty to show “Ask us”." }
-              - { name: featured, label: Feature on homepage, widget: boolean, default: false, hint: "Featured brands appear in the homepage “Featured franchises” section (6 works best)." }
+                  - { label: "Logo: show the whole image on a white card", value: logo }
+                  - { label: "Photo: fill the card (shopfronts, interiors)", value: photo }
+              - name: investment
+                label: Investment
+                widget: string
+                required: false
+                hint: "e.g. ₹10–15 L. Leave empty and the website shows “Shared on enquiry”."
+              - name: format
+                label: Outlet format
+                widget: string
+                required: false
+                hint: "e.g. Kiosk · Café. Leave empty and the website shows “Ask us”."
+              - name: featured
+                label: Show on homepage
+                widget: boolean
+                default: false
+                hint: Featured brands appear in “Featured franchises” on the homepage. 6 looks best.
 
-  # ---------------------------------------------------------------- Company profile PDF
+  # ============================================================== COMPANY PROFILE
   - name: profile
     label: Company profile (PDF)
-    description: Changes here regenerate public/Unnati-Ladder-Profile.pdf on the next deploy.
+    icon: picture_as_pdf
+    description: >-
+      Everything in the downloadable company profile. After you save, the PDF is
+      rebuilt automatically and the new version is online in about 2 minutes.
     files:
+      # ------------------------------------------------------------ Text & contact
       - name: content
         label: Profile text & contact details
+        icon: edit_note
         file: profile/content.json
         format: json
         fields:
-          - { name: year, label: Year on cover, widget: string }
-          - { name: cover_headline, label: Cover headline (white part), widget: string }
-          - { name: cover_headline_accent, label: Cover headline (teal part), widget: string }
-          - { name: cover_lead, label: Cover introduction, widget: text }
-          - { name: about_title, label: About page title, widget: string }
-          - { name: about_paragraphs, label: About page paragraphs, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
-          - { name: years, label: "Years in business (e.g. 20+)", widget: string }
-          - { name: clients, label: "Clients served (e.g. 500+)", widget: string }
-          - { name: offices, label: Associate office cities, widget: list, field: { name: city, label: City, widget: string } }
-          - { name: founder_name, label: Founder name, widget: string }
-          - { name: founder_title, label: Founder title, widget: string }
-          - name: founder_photo
-            label: Founder photo
-            widget: image
-            media_folder: /public/uploads
-            public_folder: /uploads
-          - { name: founder_bio, label: Founder bio, widget: text }
-          - { name: founder_tags, label: Founder highlights, widget: list, field: { name: tag, label: Highlight, widget: string } }
+          - name: cover
+            label: Cover page
+            widget: object
+            collapsed: true
+            summary: "{{fields.headline}} {{fields.headline_accent}}"
+            fields:
+              - { name: year, label: Year shown on the cover, widget: string, hint: "e.g. 2026" }
+              - { name: headline, label: Headline (white part), widget: string, hint: "e.g. Own a brand that's" }
+              - { name: headline_accent, label: Headline (teal part), widget: string, hint: "e.g. already winning." }
+              - { name: intro, label: Introduction under the headline, widget: text, hint: "Keep it to 2–3 short sentences." }
+
+          - name: about
+            label: About page
+            widget: object
+            collapsed: true
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Page title, widget: string }
+              - name: paragraphs
+                label: Paragraphs
+                label_singular: Paragraph
+                widget: list
+                field: { name: text, label: Paragraph, widget: text }
+                hint: Two short paragraphs fit best.
+
+          - name: numbers
+            label: Key numbers
+            widget: object
+            collapsed: true
+            summary: "{{fields.years}} years · {{fields.clients}} clients"
+            fields:
+              - { name: years, label: Years in business, widget: string, hint: "Shown as typed, e.g. 20+" }
+              - { name: clients, label: Clients served, widget: string, hint: "Shown as typed, e.g. 500+" }
+              - name: offices
+                label: Associate office cities
+                label_singular: City
+                widget: list
+                field: { name: city, label: City, widget: string }
+
+          - name: founder
+            label: Founder
+            widget: object
+            collapsed: true
+            summary: "{{fields.name}} · {{fields.title}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: title, label: Job title, widget: string }
+              - name: photo
+                label: Photo
+                widget: image
+                media_folder: /public/uploads
+                public_folder: /uploads
+                hint: A square photo works best.
+              - { name: bio, label: Short bio, widget: text, hint: "About 50 words." }
+              - name: highlights
+                label: Highlights (small tags under the bio)
+                label_singular: Highlight
+                widget: list
+                field: { name: tag, label: Highlight, widget: string }
+
           - name: commercials
-            label: Commercials (fees table)
+            label: Fees table (Commercials)
+            label_singular: Fee
             widget: list
-            summary: "{{fields.service}} · {{fields.fee}}"
+            collapsed: true
+            summary: "{{fields.service}}  ·  {{fields.fee}}"
             fields:
               - { name: service, label: Service, widget: string }
-              - { name: fee, label: Fee, widget: string }
-              - { name: charged_to, label: Charged to, widget: string }
-          - { name: catalogue_note, label: Catalogue note, widget: text }
-          - { name: phone, label: Phone, widget: string }
-          - { name: phone2, label: Second phone, widget: string, required: false }
-          - { name: whatsapp, label: "WhatsApp number (digits only, with 91)", widget: string, pattern: ['^\d{10,13}$', "Digits only, e.g. 919326950999"] }
-          - { name: email, label: Email, widget: string }
-          - { name: website, label: Website (without https://), widget: string }
-          - { name: address, label: Office address, widget: text }
-          - { name: hours, label: Office hours, widget: string }
+              - { name: fee, label: Fee, widget: string, hint: "e.g. 5% of project cost" }
+              - { name: charged_to, label: Charged to, widget: select, options: [Investor, Client, Brand] }
 
+          - name: catalogue_note
+            label: Note above the franchise catalogue
+            widget: text
+            hint: Explains that figures are indicative.
+
+          - name: contact
+            label: Contact details
+            widget: object
+            collapsed: true
+            summary: "{{fields.phone}} · {{fields.email}}"
+            fields:
+              - { name: phone, label: Main phone, widget: string, hint: "As it should be printed, e.g. +91 93269 50999" }
+              - { name: phone2, label: Second phone, widget: string, required: false }
+              - name: whatsapp
+                label: WhatsApp number (for the QR code)
+                widget: string
+                hint: "Digits only, including 91. e.g. 919326950999"
+                pattern: ['^\d{10,13}$', "Digits only, including the country code, e.g. 919326950999"]
+              - name: email
+                label: Email
+                widget: string
+                pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', "Enter a valid email address"]
+              - { name: website, label: Website, widget: string, hint: "Without https://, e.g. unnatiladder.com" }
+              - { name: address, label: Office address, widget: text }
+              - { name: hours, label: Office hours, widget: string, hint: "e.g. Mon – Sat, 9:00 AM – 6:00 PM" }
+
+      # ------------------------------------------------------------ Catalogue
       - name: catalogue
         label: Franchise catalogue
-        description: The two catalogue pages fit about 110 brands. Keep rows grouped by industry.
+        icon: table_rows
         file: profile/catalogue.json
         format: json
         fields:
-          - name: rows
-            label: Catalogue rows
-            label_singular: Row
+          - name: industries
+            label: Industries
+            label_singular: Industry
             widget: list
-            summary: "{{fields.group}} · {{fields.brand}} · {{fields.investment}}"
+            collapsed: true
+            summary: "{{fields.name}}"
+            hint: >-
+              Click an industry to add, edit or reorder its brands. The two catalogue pages
+              fit about 110 rows in total.
             fields:
-              - name: group
-                label: Industry
-                widget: string
-                hint: "e.g. Food & Beverage, Bakery & Desserts, Grocery & Supermarkets, Fashion & Retail, Healthcare, Salon & Wellness, Sports & Fitness, Education, Automotive, Equipment"
-              - { name: brand, label: Brand / format, widget: string }
-              - { name: area, label: Area, widget: string, hint: "e.g. 500–700 sq ft" }
-              - { name: fee, label: Franchise fee, widget: string, hint: "e.g. ₹5 L or Nil" }
-              - { name: investment, label: Investment, widget: string, hint: "e.g. ₹35 L or ₹1.5–2 Cr" }
-              - { name: model, label: Model, widget: string, hint: "FOFO, FOCO, FOFO / FOCO, Lease…" }
+              - { name: name, label: Industry, widget: select, options: *industries }
+              - name: rows
+                label: Brands in this industry
+                label_singular: Brand
+                widget: list
+                collapsed: true
+                summary: "{{fields.brand}}  ·  {{fields.investment}}  ·  {{fields.model}}"
+                fields:
+                  - { name: brand, label: Brand / format, widget: string, hint: "Add the format in brackets if a brand has several, e.g. “Purple Wok Co (Kiosk)”." }
+                  - { name: area, label: Area needed, widget: string, hint: "e.g. 500–700 sq ft, or No space needed" }
+                  - { name: fee, label: Franchise fee, widget: string, hint: "e.g. ₹5 L, or Nil" }
+                  - { name: investment, label: Total investment, widget: string, hint: "e.g. ₹35 L or ₹1.5–2 Cr" }
+                  - { name: model, label: Model, widget: select, options: &models ["FOFO", "FOCO", "FOFO / FOCO", "FOFO (Pune only)", "Lease", "Exclusive store", "Distributor"] }
