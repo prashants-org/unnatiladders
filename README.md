@@ -51,6 +51,17 @@ The browser remembers the token. Only sign in on your own devices, and use *Log 
 
 **What happens when you save:** each save is committed to `main`. The **Deploy site** workflow then regenerates the company profile PDF, rebuilds the site and publishes it, which takes about 2 minutes.
 
+## Visual PDF editor (`/admin/pdf/`)
+
+Open **https://unnatiladder.com/admin/pdf/** to see the company profile exactly as it prints, and edit it in place:
+
+- Click any highlighted text (headlines, About text, numbers, founder bio, fees, contact details, catalogue cells) and type.
+- Hover a catalogue row to add a row below it (＋) or delete it (✕).
+- Click the founder photo to replace it.
+- Press **Publish**. The changes are committed to `profile/content.json` / `profile/catalogue.json`, and the new PDF is online about 2 minutes later.
+
+It reuses your `/admin` sign-in (or asks for the same GitHub token). If the profile was changed somewhere else after you opened the page, it won't overwrite those changes: reload and redo your edits.
+
 ## Company profile PDF
 
 `profile/build.py` turns `profile/content.json`, `profile/catalogue.json` and the brand logos into `public/Unnati-Ladder-Profile.pdf` (10 pages, landscape A4). The deploy workflow runs it automatically. To build it locally:

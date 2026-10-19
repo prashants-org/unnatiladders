@@ -2,3 +2,5 @@ node_modules
 dist
 .env
 profile/build/
+public/admin/pdf/index.html
+public/admin/pdf/qr-*.svg

@@ -91,6 +91,7 @@ collections:
     description: >-
       Everything in the downloadable company profile. After you save, the PDF is
       rebuilt automatically and the new version is online in about 2 minutes.
+      Prefer clicking straight on the pages? Use the visual editor at unnatiladder.com/admin/pdf/
     files:
       # ------------------------------------------------------------ Text & contact
       - name: content
