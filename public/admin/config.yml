@@ -1,0 +1,124 @@
+# Unnati Ladder admin (Sveltia CMS). Open /admin/ on the live site.
+# Every save becomes a commit in the GitHub repo below; the deploy workflow then
+# rebuilds the website and regenerates the company profile PDF (about 2 minutes).
+
+backend:
+  name: github
+  repo: prashants-org/unnatiladders
+  branch: main
+  commit_messages:
+    update: "Admin: update {{collection}} “{{slug}}”"
+    uploadMedia: "Admin: upload “{{path}}”"
+    deleteMedia: "Admin: delete “{{path}}”"
+
+site_url: https://unnatiladder.com
+display_url: https://unnatiladder.com
+logo_url: /favicon.svg
+
+# Default upload location (brand logos and photos)
+media_folder: public/brands
+public_folder: /brands
+
+collections:
+  # ---------------------------------------------------------------- Website brands
+  - name: website
+    label: Website
+    files:
+      - name: brands
+        label: Franchise brands
+        description: Brands shown on the Franchises page and homepage. Add, edit, reorder or remove brands here.
+        file: src/content/brands.json
+        format: json
+        fields:
+          - name: brands
+            label: Brands
+            label_singular: Brand
+            widget: list
+            summary: "{{fields.name}} · {{fields.category}}"
+            fields:
+              - { name: name, label: Brand name, widget: string }
+              - name: category
+                label: Industry
+                widget: string
+                hint: "Use an existing industry so filters stay tidy: Food & Beverage, Automotive, Healthcare, Home Services (or a new one)."
+              - name: image
+                label: Logo or photo
+                widget: image
+                hint: "Best: a 500 × 300 px JPG or PNG with a white background."
+              - name: image_type
+                label: Image type
+                widget: select
+                default: logo
+                options:
+                  - { label: "Logo (shown whole on white)", value: logo }
+                  - { label: "Photo (fills the card)", value: photo }
+              - { name: investment, label: Investment, widget: string, required: false, hint: "e.g. ₹10–15 L. Leave empty to show “Shared on enquiry”." }
+              - { name: format, label: Format, widget: string, required: false, hint: "e.g. Kiosk · Café. Leave empty to show “Ask us”." }
+              - { name: featured, label: Feature on homepage, widget: boolean, default: false, hint: "Featured brands appear in the homepage “Featured franchises” section (6 works best)." }
+
+  # ---------------------------------------------------------------- Company profile PDF
+  - name: profile
+    label: Company profile (PDF)
+    description: Changes here regenerate public/Unnati-Ladder-Profile.pdf on the next deploy.
+    files:
+      - name: content
+        label: Profile text & contact details
+        file: profile/content.json
+        format: json
+        fields:
+          - { name: year, label: Year on cover, widget: string }
+          - { name: cover_headline, label: Cover headline (white part), widget: string }
+          - { name: cover_headline_accent, label: Cover headline (teal part), widget: string }
+          - { name: cover_lead, label: Cover introduction, widget: text }
+          - { name: about_title, label: About page title, widget: string }
+          - { name: about_paragraphs, label: About page paragraphs, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+          - { name: years, label: "Years in business (e.g. 20+)", widget: string }
+          - { name: clients, label: "Clients served (e.g. 500+)", widget: string }
+          - { name: offices, label: Associate office cities, widget: list, field: { name: city, label: City, widget: string } }
+          - { name: founder_name, label: Founder name, widget: string }
+          - { name: founder_title, label: Founder title, widget: string }
+          - name: founder_photo
+            label: Founder photo
+            widget: image
+            media_folder: /public/uploads
+            public_folder: /uploads
+          - { name: founder_bio, label: Founder bio, widget: text }
+          - { name: founder_tags, label: Founder highlights, widget: list, field: { name: tag, label: Highlight, widget: string } }
+          - name: commercials
+            label: Commercials (fees table)
+            widget: list
+            summary: "{{fields.service}} · {{fields.fee}}"
+            fields:
+              - { name: service, label: Service, widget: string }
+              - { name: fee, label: Fee, widget: string }
+              - { name: charged_to, label: Charged to, widget: string }
+          - { name: catalogue_note, label: Catalogue note, widget: text }
+          - { name: phone, label: Phone, widget: string }
+          - { name: phone2, label: Second phone, widget: string, required: false }
+          - { name: whatsapp, label: "WhatsApp number (digits only, with 91)", widget: string, pattern: ['^\d{10,13}$', "Digits only, e.g. 919326950999"] }
+          - { name: email, label: Email, widget: string }
+          - { name: website, label: Website (without https://), widget: string }
+          - { name: address, label: Office address, widget: text }
+          - { name: hours, label: Office hours, widget: string }
+
+      - name: catalogue
+        label: Franchise catalogue
+        description: The two catalogue pages fit about 110 brands. Keep rows grouped by industry.
+        file: profile/catalogue.json
+        format: json
+        fields:
+          - name: rows
+            label: Catalogue rows
+            label_singular: Row
+            widget: list
+            summary: "{{fields.group}} · {{fields.brand}} · {{fields.investment}}"
+            fields:
+              - name: group
+                label: Industry
+                widget: string
+                hint: "e.g. Food & Beverage, Bakery & Desserts, Grocery & Supermarkets, Fashion & Retail, Healthcare, Salon & Wellness, Sports & Fitness, Education, Automotive, Equipment"
+              - { name: brand, label: Brand / format, widget: string }
+              - { name: area, label: Area, widget: string, hint: "e.g. 500–700 sq ft" }
+              - { name: fee, label: Franchise fee, widget: string, hint: "e.g. ₹5 L or Nil" }
+              - { name: investment, label: Investment, widget: string, hint: "e.g. ₹35 L or ₹1.5–2 Cr" }
+              - { name: model, label: Model, widget: string, hint: "FOFO, FOCO, FOFO / FOCO, Lease…" }

@@ -1,51 +1,72 @@
 # Unnati Ladder Website
 
-Static copy of **[unnatiladder.com](https://unnatiladder.com)**, the website of **Unnati Ladder**, a Pune-based franchise and business consultancy (*"Growing Together"*).
+Source for **[unnatiladder.com](https://unnatiladder.com)**, the website of **Unnati Ladder** (*"Growing Together"*), a Pune-based franchise and business consultancy.
 
-Unnati Ladder helps clients get franchises of established brands, build their own brands, and find investment opportunities. Its services include franchising, strategic planning, leasing, sales training, branding and idea validation. It was founded by Prashant Srivastava.
+Built with **React 19 + Vite**, deployed to **GitHub Pages** by GitHub Actions. Includes a private admin at `/admin/` for editing brands and the company profile PDF.
 
-## About this repo
+## Pages
 
-The site was originally built on WordPress (Flatsome theme). In September 2024 it was mirrored to plain static files with [HTTrack](https://www.httrack.com/), and it is now served from this repo by **GitHub Pages**. There is no build step and no server-side code.
-
-### Pages
-
-| Page | File |
+| Route | Page |
 |---|---|
-| Home | `index.html` |
-| About Us | `about-us/index.html` |
-| Contact Us | `contact-us/index.html` |
+| `/` | Home: hero, featured franchises, process, services, client stories, FAQ |
+| `/services` | The six services in detail |
+| `/franchises` | Brand catalogue with industry filter and search |
+| `/about` | Company story and founder |
+| `/contact` | Enquiry form, contact details, map |
+| `/admin/` | Private editor (not linked, not indexed). See below. |
 
-### Layout
+## Run locally
 
-```
-├── index.html            # Home page
-├── about-us/             # About page
-├── contact-us/           # Contact page
-├── wp-content/           # Theme CSS/JS, plugin assets and uploaded images
-├── wp-includes/          # WordPress core front-end scripts
-├── fonts.googleapis.com/ # Mirrored Google Fonts CSS
-├── urgd.in/              # Mirrored external assets (logo)
-├── hts-cache/, hts-log.txt, backblue.gif, fade.gif   # HTTrack mirror files
-└── CNAME                 # Custom domain: unnatiladder.com
-```
-
-Some files are leftovers from the WordPress mirror and aren't needed by the static site, such as `feed/`, `comments/`, `wp-json/`, `xmlrpc*.php`, the `index*.html` variants and the HTTrack files. They can be removed later if needed.
-
-## Local preview
-
-Open `index.html` in a browser, or run a local server so relative links work:
+Requires Node.js 20+.
 
 ```bash
-python -m http.server 8000
+npm install
+npm run dev          # http://localhost:5173
+npm run build        # production build in dist/
 ```
 
-Then visit http://localhost:8000.
+## Editing content
 
-## Editing and deployment
+| What | Where |
+|---|---|
+| Brands (Franchises page and homepage) | `src/content/brands.json`, or via `/admin/` |
+| Company profile text and contacts | `profile/content.json`, or via `/admin/` |
+| Profile franchise catalogue | `profile/catalogue.json`, or via `/admin/` |
+| Other site text (services, FAQ, steps…) | `src/data.js` |
+| Logos and brand images | `public/brands/` |
 
-- Edit the HTML/CSS in place. The pages are WordPress output, so expect long, minified markup.
-- Commit to `main`. GitHub Pages publishes it automatically, and the custom domain comes from the `CNAME` file.
+## Admin (`/admin/`)
+
+The admin uses [Sveltia CMS](https://github.com/sveltia/sveltia-cms). It isn't linked anywhere on the site and is excluded from search engines. Saving requires a GitHub account with write access to this repository, so visitors who find the URL can't change anything.
+
+**To sign in:**
+
+1. Create a GitHub **fine-grained personal access token**: GitHub → Settings → Developer settings → Fine-grained tokens → *Generate new token*.
+   - Resource owner: **prashants-org**. Repository access: **only `unnatiladders`**.
+   - Permissions: **Contents: Read and write**.
+   - Set an expiry date (e.g. 90 days).
+2. Open **https://unnatiladder.com/admin/**, choose **Sign In Using Access Token** and paste the token.
+
+The browser remembers the token. Only sign in on your own devices, and use *Log out* on shared computers.
+
+**What happens when you save:** each save is committed to `main`. The **Deploy site** workflow then regenerates the company profile PDF, rebuilds the site and publishes it, which takes about 2 minutes.
+
+## Company profile PDF
+
+`profile/build.py` turns `profile/content.json`, `profile/catalogue.json` and the brand logos into `public/Unnati-Ladder-Profile.pdf` (10 pages, landscape A4). The deploy workflow runs it automatically. To build it locally:
+
+```bash
+pip install qrcode
+python profile/build.py      # needs Google Chrome or Microsoft Edge installed
+```
+
+## Enquiry form
+
+The contact form sends enquiries by email through [Web3Forms](https://web3forms.com). Create a free access key for `info@unnatiladder.com`, then add it as a repository secret named `VITE_WEB3FORMS_KEY` (Settings → Secrets and variables → Actions). Until then, the form asks visitors to call or WhatsApp instead.
+
+## Deployment
+
+`.github/workflows/deploy.yml` runs on every push to `main`: install → build the profile PDF → build the site → deploy to GitHub Pages. In **Settings → Pages**, the source must be **GitHub Actions**. The custom domain comes from `public/CNAME`.
 
 ## Contact
 

@@ -1,0 +1,121 @@
+{
+  "brands": [
+    {
+      "name": "Cheesiaano Pizza",
+      "category": "Food & Beverage",
+      "image": "/brands/cheesiaano-pizza.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    },
+    {
+      "name": "Deoras",
+      "category": "Food & Beverage",
+      "image": "/brands/deoras.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "The Beer Cafe",
+      "category": "Food & Beverage",
+      "image": "/brands/the-beer-cafe.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    },
+    {
+      "name": "Baba's Vada Pav",
+      "category": "Food & Beverage",
+      "image": "/brands/babas-vada-pav.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    },
+    {
+      "name": "Rolls Mania",
+      "category": "Food & Beverage",
+      "image": "/brands/rolls-mania.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "Pokket Cafe",
+      "category": "Food & Beverage",
+      "image": "/brands/pokket-cafe.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "Bombay Cafe",
+      "category": "Food & Beverage",
+      "image": "/brands/bombay-cafe.jpg",
+      "image_type": "photo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "Khan Saheb",
+      "category": "Food & Beverage",
+      "image": "/brands/khan-saheb.jpg",
+      "image_type": "photo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "Sizzling Joe",
+      "category": "Food & Beverage",
+      "image": "/brands/sizzling-joe.jpg",
+      "image_type": "photo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "The Car Laundry",
+      "category": "Automotive",
+      "image": "/brands/the-car-laundry.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    },
+    {
+      "name": "GO Waterless Car Wash",
+      "category": "Automotive",
+      "image": "/brands/go-waterless.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": false
+    },
+    {
+      "name": "Healing Hands Clinic",
+      "category": "Healthcare",
+      "image": "/brands/healing-hands-clinic.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    },
+    {
+      "name": "mycleaners.in",
+      "category": "Home Services",
+      "image": "/brands/mycleaners.jpg",
+      "image_type": "logo",
+      "investment": "",
+      "format": "",
+      "featured": true
+    }
+  ]
+}
