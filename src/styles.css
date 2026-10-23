@@ -638,6 +638,8 @@ label { display: grid; gap: 7px; font-size: 0.86rem; font-weight: 600; color: va
 input, select, textarea { font: 400 1rem var(--sans); color: var(--ink); padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--soft); width: 100%; transition: border-color 0.18s ease, background 0.18s ease; }
 input:focus, select:focus, textarea:focus { border-color: var(--teal); background: #fff; }
 .honeypot { position: absolute; left: -9999px; }
+/* Hidden on screen, still read by screen readers */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 form .btn { justify-self: start; }
 .form-error { color: #b42318; margin: 0; }
 .form-success { text-align: center; padding: 40px 8px; }

@@ -24,12 +24,13 @@ export default function Franchises() {
       <section className="section section-soft">
         <div className="container">
           <div className="filters">
-            <div className="chips" role="tablist" aria-label="Filter by industry">
+            {/* Toggle buttons, not tabs: there are no tab panels, just one filtered list */}
+            <div className="chips" role="group" aria-label="Filter by industry">
               {categories.map((c) => (
                 <button
                   key={c}
-                  role="tab"
-                  aria-selected={cat === c}
+                  type="button"
+                  aria-pressed={cat === c}
                   className={`chip ${cat === c ? "is-active" : ""}`}
                   onClick={() => setCat(c)}
                 >
@@ -52,6 +53,9 @@ export default function Franchises() {
             </label>
           </div>
 
+          <h2 className="sr-only" aria-live="polite">
+            {cat === ALL ? "All brands" : cat}: {list.length} {list.length === 1 ? "brand" : "brands"}
+          </h2>
           {list.length ? (
             <div className="brand-grid">
               {list.map((b) => (
