@@ -22,7 +22,8 @@ Requires Node.js 20+.
 ```bash
 npm install
 npm run dev          # http://localhost:5173
-npm run build        # production build in dist/, plus an index.html per route
+npm run check        # validate brands and profile content
+npm run build        # check, then production build in dist/ with an index.html per route
 ```
 
 ## Editing content
@@ -30,7 +31,7 @@ npm run build        # production build in dist/, plus an index.html per route
 | What | Where |
 |---|---|
 | Brands (Franchises page and homepage) | `src/content/brands.json`, or via `/admin/` |
-| Company profile text and contacts | `profile/content.json`, or via `/admin/` |
+| Contact details, founder, years in business | `profile/content.json`, or via `/admin/`. Used by both the website and the PDF |
 | Profile franchise catalogue | `profile/catalogue.json`, or via `/admin/` |
 | Other site text (services, FAQ, steps, client quotes) | `src/data.js` (quotes marked `placeholder: true` stay hidden on the live site) |
 | Page titles and search descriptions | `src/meta.js` |
@@ -74,11 +75,11 @@ python profile/build.py      # needs Google Chrome or Microsoft Edge installed
 
 ## Enquiry form
 
-The contact form sends enquiries by email through [Web3Forms](https://web3forms.com). Create a free access key for `info@unnatiladder.com`, then add it as a repository secret named `VITE_WEB3FORMS_KEY` (Settings → Secrets and variables → Actions). Until then, the form asks visitors to call or WhatsApp instead.
+The contact form sends enquiries by email through [Web3Forms](https://web3forms.com). Create a free access key for `info@unnatiladder.com`, then add it as a repository secret named `VITE_WEB3FORMS_KEY` (Settings → Secrets and variables → Actions). Until then, the form asks visitors to call or WhatsApp instead, and each deploy shows a warning. Once the form is live, change that warning step in `deploy.yml` to fail the deploy instead.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` runs on every push to `main`: install → build the profile PDF → build the site → deploy to GitHub Pages. In **Settings → Pages**, the source must be **GitHub Actions**. The custom domain comes from `public/CNAME`.
+`.github/workflows/deploy.yml` runs on every push to `main`: install → check content → build the profile PDF → build the site → deploy to GitHub Pages. If the content check fails (for example a brand with a missing image after an `/admin` save), nothing is deployed and the live site stays as it was; the error is shown on the workflow run. Pull requests run the same steps without deploying. In **Settings → Pages**, the source must be **GitHub Actions**. The custom domain comes from `public/CNAME`.
 
 ## Contact
 
