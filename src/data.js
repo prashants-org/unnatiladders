@@ -116,27 +116,34 @@ export const brands = brandData.brands.map((b) => ({ ...b, slug: slugify(b.name)
 
 export const featured = brands.filter((b) => b.featured);
 
-// PLACEHOLDERS: replace with real client quotes (with permission) and set placeholder: false.
-// Entries still marked placeholder are hidden on the live site; the homepage hides the
-// "Client stories" section entirely until at least one real quote is added.
+// DRAFT testimonials, written to be sent to real clients for approval. They are NOT real
+// clients: the names and cities are examples. Before publishing one, get the client's written
+// OK, change the name, role and city to theirs, edit the wording to match what they said,
+// then set placeholder: false. Publishing invented testimonials as real is a fake review
+// under India's consumer protection rules.
+// Entries marked placeholder show in `npm run dev` only. The homepage hides the
+// "Client stories" section entirely until at least one approved quote is added.
 export const testimonials = [
   {
     placeholder: true,
-    quote: "Add a real client quote here: what they wanted, and how Unnati Ladder helped them get there.",
-    name: "Client name",
-    role: "Franchise owner · City",
+    quote:
+      "I had savings and wanted my own business, but no idea where to begin. The team shortlisted three food brands that fit my budget, explained the numbers honestly, and handled the paperwork. We opened in about four months.",
+    name: "Rohan Deshmukh",
+    role: "Franchise owner · Nashik",
   },
   {
     placeholder: true,
-    quote: "Add a second quote here, ideally from someone who launched their own brand or runs multiple outlets.",
-    name: "Client name",
-    role: "Brand founder · City",
+    quote:
+      "We had a recipe people loved and nothing else. Unnati Ladder helped us test the idea, build the name and look, and plan a proper launch. They told us what wouldn't work too, which saved us money.",
+    name: "Sneha Kulkarni",
+    role: "Brand founder · Pune",
   },
   {
     placeholder: true,
-    quote: "Add a third quote here, for example from an investor or a first-time entrepreneur.",
-    name: "Client name",
-    role: "Investor · City",
+    quote:
+      "I already ran one outlet and wanted to add a second brand without spreading myself thin. Their advice on picking a non-competing category and the right location made the decision much easier.",
+    name: "Amit Agarwal",
+    role: "Multi-brand operator · Bangalore",
   },
 ];
 
