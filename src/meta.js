@@ -27,7 +27,7 @@ export const pageMeta = {
   "/contact": {
     title: "Contact | Unnati Ladder",
     description:
-      "Book a free consultation. Call, WhatsApp or visit us at Phoenix Market City, Viman Nagar, Pune. Mon – Sat, 9:00 AM – 6:00 PM.",
+      "Book a free consultation with Unnati Ladder. Call, WhatsApp or send an enquiry, or visit our office in Viman Nagar, Pune.",
   },
 };
 

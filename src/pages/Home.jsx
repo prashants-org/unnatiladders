@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
 import { BrandCard, CountUp, CtaBand, Faq, Testimonials, usePauseOffscreen, useReveal, visibleTestimonials } from "../components/Sections";
 import { brandImage } from "../image";
-import { brands, contact, featured, paths, services, stats, steps } from "../data";
+import { brands, contact, featured, founder, paths, services, stats, steps } from "../data";
 
 function HeroColumns() {
   // Three columns of brand tiles drifting in opposite directions.
@@ -204,16 +204,18 @@ export default function Home() {
       <section className="section dark">
         <div className="container founder">
           <div className="founder-media reveal">
-            <img src="/prashant.jpg" alt="Prashant Srivastava, founder of Unnati Ladder" loading="lazy" decoding="async" />
+            <img src={founder.photo} alt={`${founder.name}, founder of Unnati Ladder`} loading="lazy" decoding="async" />
           </div>
           <div className="reveal reveal-delay-1">
             <p className="eyebrow">Meet the founder</p>
             <h2 className="founder-statement">Advice that puts your requirements first. Always relevant, always transparent.</h2>
-            <p className="founder-name">Prashant Srivastava, Founder</p>
+            <p className="founder-name">
+              {founder.name}, {founder.title}
+            </p>
             <ul className="creds">
-              <li>MBA, Marketing & HR</li>
-              <li>Diploma, Export Management</li>
-              <li>20+ years in strategy</li>
+              {founder.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
             </ul>
             <Link to="/about" className="text-link">
               Our story <Icon name="arrow" size={18} />

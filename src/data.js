@@ -1,19 +1,31 @@
 import brandData from "./content/brands.json";
+import profile from "../profile/content.json";
 
-// All site content lives here. Edit this file to update text across the site.
+// Site text lives here. Contact details, founder and key numbers come from
+// profile/content.json (edited in /admin), so the website and the PDF always agree.
+
+const c = profile.contact;
+// "LG-03, East Court, Phoenix Market City, Viman Nagar, Pune 411014" -> two roughly equal lines
+const addressParts = c.address.split(/,\s*/);
+const addressSplit = Math.ceil(addressParts.length / 2);
 
 export const contact = {
-  phone: "+91 93269 50999",
-  phoneHref: "tel:+919326950999",
-  whatsapp: "https://wa.me/919326950999",
-  email: "info@unnatiladder.com",
-  hours: "Mon – Sat, 9:00 AM – 6:00 PM",
-  address: ["LG-03, East Court, Phoenix Market City", "Viman Nagar, Pune 411014"],
-  mapEmbed: "https://www.google.com/maps?q=Phoenix+Marketcity+Viman+Nagar+Pune&output=embed",
+  phone: c.phone,
+  phoneHref: `tel:+${c.phone.replace(/\D/g, "")}`,
+  whatsapp: `https://wa.me/${c.whatsapp}`,
+  email: c.email,
+  hours: c.hours,
+  address: [addressParts.slice(0, addressSplit).join(", "), addressParts.slice(addressSplit).join(", ")],
+  mapEmbed: `https://www.google.com/maps?q=${encodeURIComponent(c.address)}&output=embed`,
 };
 
+export const founder = profile.founder;
+
+// "20+" -> { value: 20, suffix: "+" } so CountUp can animate it
+const yearsMatch = /^(\d+)(.*)$/.exec(profile.numbers.years.trim()) || [];
+
 export const stats = [
-  { value: 20, suffix: "+", label: "Years in business strategy" },
+  { value: Number(yearsMatch[1]) || 0, suffix: yearsMatch[2] || "", label: "Years in business strategy" },
   { value: brandData.brands.length, suffix: "", label: "Partner brands" },
   { value: new Set(brandData.brands.map((b) => b.category)).size, suffix: "", label: "Industries covered" },
 ];
@@ -147,6 +159,6 @@ export const faqs = [
   },
   {
     q: "Where do you work?",
-    a: "Our office is at Phoenix Market City, Viman Nagar, Pune, and we work with clients and brands across India.",
+    a: `Our office is at ${contact.address.join(", ")}, and we work with clients and brands across India.`,
   },
 ];
