@@ -8,6 +8,9 @@ import Franchises from "./pages/Franchises";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+// Self-hosted so text isn't blocked on a third-party stylesheet
+import "@fontsource-variable/inter";
+import "@fontsource-variable/sora";
 import "./styles.css";
 
 createRoot(document.getElementById("root")).render(

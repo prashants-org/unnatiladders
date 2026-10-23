@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
 import { BrandCard, CountUp, CtaBand, Faq, Testimonials, usePauseOffscreen, useReveal, visibleTestimonials } from "../components/Sections";
+import { brandImage } from "../image";
 import { brands, contact, featured, paths, services, stats, steps } from "../data";
 
 function HeroColumns() {
@@ -16,7 +17,7 @@ function HeroColumns() {
           <div className="hero-col-track">
             {[...col, ...col].map((b, j) => (
               <div key={j} className={`hero-tile ${b.kind}`}>
-                <img src={b.image} alt="" />
+                <img {...brandImage(b.image, "(max-width: 880px) 30vw, 160px")} alt="" decoding="async" />
               </div>
             ))}
           </div>
@@ -76,7 +77,7 @@ function LogoMarquee() {
         <div className="marquee-track">
           {[...logos, ...logos].map((b, i) => (
             <div key={i} className="marquee-item">
-              <img src={b.image} alt={i < logos.length ? b.name : ""} loading="lazy" />
+              <img {...brandImage(b.image, "110px")} alt={i < logos.length ? b.name : ""} loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -203,7 +204,7 @@ export default function Home() {
       <section className="section dark">
         <div className="container founder">
           <div className="founder-media reveal">
-            <img src="/prashant.jpg" alt="Prashant Srivastava, founder of Unnati Ladder" />
+            <img src="/prashant.jpg" alt="Prashant Srivastava, founder of Unnati Ladder" loading="lazy" decoding="async" />
           </div>
           <div className="reveal reveal-delay-1">
             <p className="eyebrow">Meet the founder</p>

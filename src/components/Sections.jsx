@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "./Icon";
 import { faqs, testimonials } from "../data";
+import { brandImage } from "../image";
 
 /** Adds .is-visible to every .reveal element once it scrolls into view. Re-runs on route change. */
 export function useReveal() {
@@ -91,7 +92,7 @@ export function BrandCard({ brand, className = "" }) {
   return (
     <article className={`card hoverable brand-card ${className}`}>
       <div className={`brand-media ${brand.kind}`}>
-        <img src={brand.image} alt={brand.name} loading="lazy" />
+        <img {...brandImage(brand.image, "(max-width: 600px) 92vw, 380px")} alt={brand.name} loading="lazy" decoding="async" />
         <span className="tag">{brand.category}</span>
       </div>
       <div className="brand-body">

@@ -86,7 +86,7 @@ function Footer() {
           <p>Franchise and business consultancy helping entrepreneurs own proven brands and build new ones.</p>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <ul>
             {NAV.slice(1).map((n) => (
               <li key={n.to}>
@@ -101,7 +101,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4>Visit</h4>
+          <h2>Visit</h2>
           <p>
             {contact.address[0]}
             <br />
@@ -110,7 +110,7 @@ function Footer() {
           <p>{contact.hours}</p>
         </div>
         <div>
-          <h4>Talk to us</h4>
+          <h2>Talk to us</h2>
           <ul>
             <li>
               <a href={contact.phoneHref}>{contact.phone}</a>
