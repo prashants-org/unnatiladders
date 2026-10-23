@@ -2,7 +2,7 @@
 
 Source for **[unnatiladder.com](https://unnatiladder.com)**, the website of **Unnati Ladder** (*"Growing Together"*), a Pune-based franchise and business consultancy.
 
-Built with **React 19 + Vite**, deployed to **GitHub Pages** by GitHub Actions. Includes a private admin at `/admin/` for editing brands and the company profile PDF.
+Built with **React 19 + Vite**, deployed to **GitHub Pages** by GitHub Actions. Every page is pre-rendered to static HTML at build time and then hydrated by React, so content shows before any JavaScript runs. Includes a private admin at `/admin/` for editing brands and the company profile PDF.
 
 ## Pages
 
@@ -23,7 +23,7 @@ Requires Node.js 20+.
 npm install
 npm run dev          # http://localhost:5173
 npm run check        # validate brands and profile content
-npm run build        # check, then production build in dist/ with an index.html per route
+npm run build        # check, then production build in dist/ with every page pre-rendered
 ```
 
 ## Editing content

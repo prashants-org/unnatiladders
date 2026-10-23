@@ -130,8 +130,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .dark .text-link { color: var(--teal-bright); }
 
 /* ---------- Reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* Only hidden when JavaScript is running (html.js, set in index.html), so the pre-rendered
+   pages stay readable without it */
+.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .reveal.is-visible { opacity: 1; transform: none; }
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
 .reveal-delay-3 { transition-delay: 0.24s; }
@@ -230,6 +232,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .nav-cta { margin-left: 0.6rem; }
 .menu-toggle { display: none; background: none; border: 0; padding: 8px; color: #fff; cursor: pointer; }
 .site-header.is-solid .menu-toggle { color: var(--ink); }
+/* Without JavaScript the header can't turn solid on scroll, so it starts solid */
+html:not(.js) .site-header { background: #fff; border-color: var(--line); }
+html:not(.js) .site-header .brand .logo-dark { opacity: 1; }
+html:not(.js) .site-header .brand .logo-light { opacity: 0; }
+html:not(.js) .site-header .main-nav a:not(.btn) { color: var(--muted); }
+html:not(.js) .site-header .main-nav a.active:not(.btn) { color: var(--blue); }
 
 /* ---------- Dark hero shared backdrop ---------- */
 .hero, .page-hero {
@@ -740,6 +748,6 @@ form .btn { justify-self: start; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
