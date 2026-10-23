@@ -15,7 +15,7 @@ export const contact = {
 export const stats = [
   { value: 20, suffix: "+", label: "Years in business strategy" },
   { value: brandData.brands.length, suffix: "", label: "Partner brands" },
-  { value: 4, suffix: "", label: "Industries covered" },
+  { value: new Set(brandData.brands.map((b) => b.category)).size, suffix: "", label: "Industries covered" },
 ];
 
 export const paths = [
@@ -105,6 +105,8 @@ export const brands = brandData.brands.map((b) => ({ ...b, slug: slugify(b.name)
 export const featured = brands.filter((b) => b.featured);
 
 // PLACEHOLDERS: replace with real client quotes (with permission) and set placeholder: false.
+// Entries still marked placeholder are hidden on the live site; the homepage hides the
+// "Client stories" section entirely until at least one real quote is added.
 export const testimonials = [
   {
     placeholder: true,

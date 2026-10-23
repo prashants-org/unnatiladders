@@ -1,13 +1,16 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../components/Icon";
-import { BrandCard, CountUp, CtaBand, Faq, Testimonials, useReveal } from "../components/Sections";
+import { BrandCard, CountUp, CtaBand, Faq, Testimonials, usePauseOffscreen, useReveal, visibleTestimonials } from "../components/Sections";
 import { brands, contact, featured, paths, services, stats, steps } from "../data";
 
 function HeroColumns() {
   // Three columns of brand tiles drifting in opposite directions.
   const cols = [0, 1, 2].map((c) => brands.filter((_, i) => i % 3 === c));
+  const ref = useRef(null);
+  usePauseOffscreen(ref);
   return (
-    <div className="hero-columns" aria-hidden="true">
+    <div ref={ref} className="hero-columns" aria-hidden="true">
       {cols.map((col, i) => (
         <div key={i} className={`hero-col ${i === 1 ? "down" : ""}`}>
           <div className="hero-col-track">
@@ -65,8 +68,10 @@ function Hero() {
 
 function LogoMarquee() {
   const logos = brands.filter((b) => b.kind === "logo");
+  const ref = useRef(null);
+  usePauseOffscreen(ref);
   return (
-    <div className="marquee-band" aria-label="Brands we work with">
+    <div ref={ref} className="marquee-band" aria-label="Brands we work with">
       <div className="marquee">
         <div className="marquee-track">
           {[...logos, ...logos].map((b, i) => (
@@ -181,16 +186,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section section-soft">
-        <div className="container">
-          <div className="section-head center reveal">
-            <p className="eyebrow">Client stories</p>
-            <h2>Entrepreneurs who took the next step.</h2>
+      {/* Testimonials (hidden until there is at least one real quote) */}
+      {visibleTestimonials.length > 0 && (
+        <section className="section section-soft">
+          <div className="container">
+            <div className="section-head center reveal">
+              <p className="eyebrow">Client stories</p>
+              <h2>Entrepreneurs who took the next step.</h2>
+            </div>
+            <Testimonials />
           </div>
-          <Testimonials />
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Founder */}
       <section className="section dark">

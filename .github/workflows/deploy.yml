@@ -39,18 +39,11 @@ jobs:
       - name: Build company profile PDF
         run: python profile/build.py
 
+      # Also writes an index.html per route with its own title and canonical URL (scripts/route-pages.mjs)
       - name: Build site
         run: npm run build
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
-
-      # Give each route its own index.html so /franchises etc. return 200; 404.html catches the rest
-      - name: Route pages
-        run: |
-          for route in services franchises about contact; do
-            mkdir -p dist/$route && cp dist/index.html dist/$route/index.html
-          done
-          cp dist/index.html dist/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:

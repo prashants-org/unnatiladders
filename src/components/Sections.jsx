@@ -24,6 +24,20 @@ export function useReveal() {
   }, [pathname]);
 }
 
+/**
+ * Pauses the CSS animations inside `ref` while it is off-screen. Endless animations that
+ * keep running out of view make the browser redo layer work on every scroll frame.
+ */
+export function usePauseOffscreen(ref) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(([entry]) => el.classList.toggle("is-paused", !entry.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ref]);
+}
+
 export function CountUp({ value, suffix = "" }) {
   const ref = useRef(null);
   const [n, setN] = useState(0);
@@ -100,10 +114,13 @@ export function BrandCard({ brand, className = "" }) {
   );
 }
 
+// Placeholders show in `npm run dev` as a reminder, never on the live site.
+export const visibleTestimonials = import.meta.env.DEV ? testimonials : testimonials.filter((t) => !t.placeholder);
+
 export function Testimonials() {
   return (
     <div className="quotes">
-      {testimonials.map((t, i) => (
+      {visibleTestimonials.map((t, i) => (
         <figure key={i} className={`card quote-card reveal reveal-delay-${i} ${t.placeholder ? "is-placeholder" : ""}`}>
           {t.placeholder && <span className="placeholder-flag">Placeholder</span>}
           <div className="quote-mark" aria-hidden="true">“</div>

@@ -22,7 +22,7 @@ Requires Node.js 20+.
 ```bash
 npm install
 npm run dev          # http://localhost:5173
-npm run build        # production build in dist/
+npm run build        # production build in dist/, plus an index.html per route
 ```
 
 ## Editing content
@@ -32,7 +32,8 @@ npm run build        # production build in dist/
 | Brands (Franchises page and homepage) | `src/content/brands.json`, or via `/admin/` |
 | Company profile text and contacts | `profile/content.json`, or via `/admin/` |
 | Profile franchise catalogue | `profile/catalogue.json`, or via `/admin/` |
-| Other site text (services, FAQ, steps…) | `src/data.js` |
+| Other site text (services, FAQ, steps, client quotes) | `src/data.js` (quotes marked `placeholder: true` stay hidden on the live site) |
+| Page titles and search descriptions | `src/meta.js` |
 | Logos and brand images | `public/brands/` |
 
 ## Admin (`/admin/`)
