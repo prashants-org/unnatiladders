@@ -46,7 +46,7 @@ jobs:
       - name: Build company profile PDF
         run: python profile/build.py
 
-      # Also writes an index.html per route with its own title and canonical URL (scripts/route-pages.mjs)
+      # Client build + server build, then pre-renders every page to static HTML (scripts/prerender.mjs)
       # --ignore-scripts skips the prebuild content check, which already ran above
       - name: Build site
         run: npm run build --ignore-scripts

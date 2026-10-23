@@ -1,9 +1,15 @@
-// Runs after `vite build`. Gives each route its own index.html (so /franchises/ etc. return 200
-// on GitHub Pages) with that page's title, description and canonical URL already in the HTML,
-// for search engines and link previews that don't run JavaScript. 404.html catches the rest.
+// Runs after the client and server builds. Renders every route to static HTML with
+// src/entry-server.jsx and writes it to dist/<route>/index.html, with that page's title,
+// description and canonical URL, so visitors see content before any JavaScript runs and
+// crawlers and link previews get the full page. The browser then hydrates it (src/main.jsx).
+// 404.html is the pre-rendered "not found" page that GitHub Pages serves for unknown URLs.
 // Also adds the business details for Google (JSON-LD), built from profile/content.json.
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { SITE_URL, canonicalUrl, pageMeta } from "../src/meta.js";
+
+const { render: renderApp } = await import(pathToFileURL(resolve("dist-ssr/entry-server.js")).href);
 
 const profile = JSON.parse(readFileSync("profile/content.json", "utf8"));
 
@@ -63,8 +69,10 @@ const template = readFileSync("dist/index.html", "utf8").replace(
   `  ${fontPreloads.join("\n    ")}\n    ${businessJsonLd()}\n  </head>`
 );
 
-function render(path, { noindex = false } = {}) {
-  const { title, description } = pageMeta[path];
+const ROOT = '<div id="root"></div>';
+if (!template.includes(ROOT)) throw new Error(`index.html is missing ${ROOT}`);
+
+function render(path, { title, description }, { noindex = false } = {}) {
   const url = canonicalUrl(path);
   const swaps = [
     [/<title>[^<]*<\/title>/, `<title>${escape(title)}</title>`],
@@ -74,7 +82,7 @@ function render(path, { noindex = false } = {}) {
     [/(<meta\s+property="og:url"\s+content=")[^"]*/, `$1${url}`],
     [/(<link\s+rel="canonical"\s+href=")[^"]*/, `$1${url}`],
   ];
-  let html = template;
+  let html = template.replace(ROOT, `<div id="root">${renderApp(path)}</div>`);
   for (const [pattern, replacement] of swaps) {
     if (!pattern.test(html)) throw new Error(`index.html is missing ${pattern}`);
     html = html.replace(pattern, replacement);
@@ -85,11 +93,13 @@ function render(path, { noindex = false } = {}) {
   return html;
 }
 
-for (const path of Object.keys(pageMeta)) {
+for (const [path, meta] of Object.entries(pageMeta)) {
   const dir = path === "/" ? "dist" : `dist${path}`;
   mkdirSync(dir, { recursive: true });
-  writeFileSync(`${dir}/index.html`, render(path));
+  writeFileSync(`${dir}/index.html`, render(path, meta));
 }
-writeFileSync("dist/404.html", render("/", { noindex: true }));
+// Any path that isn't a route renders the NotFound page
+const notFound = { title: "Page not found | Unnati Ladder", description: pageMeta["/"].description };
+writeFileSync("dist/404.html", render("/404", notFound, { noindex: true }));
 
-console.log(`Wrote ${Object.keys(pageMeta).length} route pages and 404.html`);
+console.log(`Pre-rendered ${Object.keys(pageMeta).length} pages and 404.html`);

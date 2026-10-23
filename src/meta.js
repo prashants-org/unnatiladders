@@ -1,5 +1,5 @@
-// Title and description for each page. Used in the browser (usePageMeta) and at build time
-// (scripts/route-pages.mjs) so every route's HTML carries its own title, description and canonical URL.
+// Title and description for each page. Used in the browser (PageMeta in Layout.jsx) and at build time
+// (scripts/prerender.mjs) so every route's HTML carries its own title, description and canonical URL.
 
 export const SITE_URL = "https://unnatiladder.com";
 

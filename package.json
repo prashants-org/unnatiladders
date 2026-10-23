@@ -7,7 +7,7 @@
     "dev": "vite",
     "check": "node scripts/validate-content.mjs",
     "prebuild": "npm run check",
-    "build": "vite build && node scripts/optimize-images.mjs && node scripts/route-pages.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/optimize-images.mjs && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

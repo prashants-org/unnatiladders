@@ -4,3 +4,4 @@ dist
 profile/build/
 public/admin/pdf/index.html
 public/admin/pdf/qr-*.svg
+dist-ssr

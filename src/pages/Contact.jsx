@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Icon, { WhatsAppIcon } from "../components/Icon";
 import { PageHero, useReveal } from "../components/Sections";
@@ -15,6 +15,15 @@ export default function Contact() {
   const [params] = useSearchParams();
   const preset = params.get("brand") || "";
   const [status, setStatus] = useState("idle");
+  // Controlled and set in an effect: the page is pre-rendered without the ?brand= query, and
+  // React doesn't patch a server/browser mismatch in a select's initial value when hydrating.
+  const [interest, setInterest] = useState("");
+  const [brand, setBrand] = useState("");
+  useEffect(() => {
+    if (!preset) return;
+    setBrand(preset);
+    setInterest((current) => current || INTERESTS[0]);
+  }, [preset]);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -35,6 +44,8 @@ export default function Contact() {
       if (json.success) {
         setStatus("sent");
         form.reset();
+        setInterest("");
+        setBrand("");
       } else {
         setStatus("error");
       }
@@ -127,14 +138,14 @@ export default function Contact() {
                 <div className="field-row">
                   <label>
                     I'm interested in
-                    <select name="interest" defaultValue={preset ? INTERESTS[0] : ""} required>
+                    <select name="interest" value={interest} onChange={(e) => setInterest(e.target.value)} required>
                       <option value="" disabled>Choose one</option>
                       {INTERESTS.map((i) => <option key={i}>{i}</option>)}
                     </select>
                   </label>
                   <label>
                     Brand
-                    <select name="brand" defaultValue={preset}>
+                    <select name="brand" value={brand} onChange={(e) => setBrand(e.target.value)}>
                       <option value="">Not sure yet</option>
                       {brands.map((b) => <option key={b.slug}>{b.name}</option>)}
                     </select>
