@@ -1,5 +1,6 @@
 import Icon from "../components/Icon";
 import { CtaBand, PageHero, useReveal } from "../components/Sections";
+import { founder } from "../data";
 
 const values = [
   {
@@ -48,15 +49,11 @@ export default function About() {
             </a>
           </div>
           <aside className="card founder-card reveal reveal-delay-1">
-            <img src="/prashant.jpg" alt="Prashant Srivastava" />
+            <img src={founder.photo} alt={founder.name} loading="lazy" decoding="async" />
             <div className="body">
-              <p className="eyebrow">Founder</p>
-              <h3>Prashant Srivastava</h3>
-              <p className="muted">
-                An MBA in Marketing and HR with a Diploma in Export Management, Prashant has spent 20+ years in strategic
-                planning and management, helping organisations with business development, brand expansion, marketing
-                strategy and liaising.
-              </p>
+              <p className="eyebrow">{founder.title}</p>
+              <h3>{founder.name}</h3>
+              <p className="muted">{founder.bio}</p>
             </div>
           </aside>
         </div>

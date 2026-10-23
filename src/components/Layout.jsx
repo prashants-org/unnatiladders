@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import Icon, { WhatsAppIcon } from "./Icon";
 import { contact } from "../data";
+import { canonicalUrl, pageMeta } from "../meta";
+import { usePauseOffscreen } from "./Sections";
 
 const NAV = [
   { to: "/", label: "Home", end: true },
@@ -71,8 +73,10 @@ function Header() {
 }
 
 function Footer() {
+  const ref = useRef(null);
+  usePauseOffscreen(ref);
   return (
-    <footer className="site-footer">
+    <footer ref={ref} className="site-footer">
       <div className="container footer-grid">
         <div>
           <Link to="/" className="brand footer-brand" aria-label="Unnati Ladder home">
@@ -82,7 +86,7 @@ function Footer() {
           <p>Franchise and business consultancy helping entrepreneurs own proven brands and build new ones.</p>
         </div>
         <div>
-          <h4>Explore</h4>
+          <h2>Explore</h2>
           <ul>
             {NAV.slice(1).map((n) => (
               <li key={n.to}>
@@ -97,7 +101,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4>Visit</h4>
+          <h2>Visit</h2>
           <p>
             {contact.address[0]}
             <br />
@@ -106,7 +110,7 @@ function Footer() {
           <p>{contact.hours}</p>
         </div>
         <div>
-          <h4>Talk to us</h4>
+          <h2>Talk to us</h2>
           <ul>
             <li>
               <a href={contact.phoneHref}>{contact.phone}</a>
@@ -131,9 +135,30 @@ function Footer() {
 }
 
 function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    // "instant" so a new page doesn't smooth-scroll up from wherever the last one was.
+    // Hash links (e.g. /services#branding) scroll to their section themselves.
+    if (!hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname, hash]);
+  return null;
+}
+
+function setHeadTag(selector, attr, value) {
+  const el = document.head.querySelector(selector);
+  if (el) el.setAttribute(attr, value);
+}
+
+/** Keeps the title, description and canonical URL in step with the current route. */
+function PageMeta() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
+    const meta = pageMeta[path];
+    document.title = meta ? meta.title : "Page not found | Unnati Ladder";
+    if (!meta) return;
+    setHeadTag('meta[name="description"]', "content", meta.description);
+    setHeadTag('link[rel="canonical"]', "href", canonicalUrl(path));
   }, [pathname]);
   return null;
 }
@@ -141,6 +166,7 @@ function ScrollToTop() {
 export default function Layout() {
   return (
     <>
+      <PageMeta />
       <ScrollToTop />
       <Header />
       <main>

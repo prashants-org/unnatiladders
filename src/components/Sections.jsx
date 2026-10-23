@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "./Icon";
 import { faqs, testimonials } from "../data";
+import { brandImage } from "../image";
 
 /** Adds .is-visible to every .reveal element once it scrolls into view. Re-runs on route change. */
 export function useReveal() {
@@ -22,6 +23,20 @@ export function useReveal() {
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, [pathname]);
+}
+
+/**
+ * Pauses the CSS animations inside `ref` while it is off-screen. Endless animations that
+ * keep running out of view make the browser redo layer work on every scroll frame.
+ */
+export function usePauseOffscreen(ref) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(([entry]) => el.classList.toggle("is-paused", !entry.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ref]);
 }
 
 export function CountUp({ value, suffix = "" }) {
@@ -77,7 +92,7 @@ export function BrandCard({ brand, className = "" }) {
   return (
     <article className={`card hoverable brand-card ${className}`}>
       <div className={`brand-media ${brand.kind}`}>
-        <img src={brand.image} alt={brand.name} loading="lazy" />
+        <img {...brandImage(brand.image, "(max-width: 600px) 92vw, 380px")} alt={brand.name} loading="lazy" decoding="async" />
         <span className="tag">{brand.category}</span>
       </div>
       <div className="brand-body">
@@ -100,10 +115,13 @@ export function BrandCard({ brand, className = "" }) {
   );
 }
 
+// Placeholders show in `npm run dev` as a reminder, never on the live site.
+export const visibleTestimonials = import.meta.env.DEV ? testimonials : testimonials.filter((t) => !t.placeholder);
+
 export function Testimonials() {
   return (
     <div className="quotes">
-      {testimonials.map((t, i) => (
+      {visibleTestimonials.map((t, i) => (
         <figure key={i} className={`card quote-card reveal reveal-delay-${i} ${t.placeholder ? "is-placeholder" : ""}`}>
           {t.placeholder && <span className="placeholder-flag">Placeholder</span>}
           <div className="quote-mark" aria-hidden="true">“</div>

@@ -1,9 +1,11 @@
 name: Deploy site
 
-# Runs on every push to main, including saves made in the /admin editor.
+# Runs on every push to main, including saves made in the /admin editor, and deploys.
+# On pull requests it runs the same checks and build, without deploying.
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,8 +13,9 @@ permissions:
   pages: write
   id-token: write
 
+# One run per branch/PR; a newer push cancels the older run
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -35,29 +38,39 @@ jobs:
           npm ci
           pip install qrcode==8.2
 
+      # Fails on invalid brands or profile content (e.g. a bad /admin save) before anything is built
+      - name: Check content
+        run: npm run check
+
       # Regenerates public/Unnati-Ladder-Profile.pdf from profile/*.json (uses the runner's Google Chrome)
       - name: Build company profile PDF
         run: python profile/build.py
 
+      # Also writes an index.html per route with its own title and canonical URL (scripts/route-pages.mjs)
+      # --ignore-scripts skips the prebuild content check, which already ran above
       - name: Build site
-        run: npm run build
+        run: npm run build --ignore-scripts
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
 
-      # Give each route its own index.html so /franchises etc. return 200; 404.html catches the rest
-      - name: Route pages
+      # Change to `exit 1` once the form is live, so a deploy can never ship a dead form
+      - name: Check enquiry form key
+        if: github.event_name != 'pull_request'
+        env:
+          KEY: ${{ secrets.VITE_WEB3FORMS_KEY }}
         run: |
-          for route in services franchises about contact; do
-            mkdir -p dist/$route && cp dist/index.html dist/$route/index.html
-          done
-          cp dist/index.html dist/404.html
+          if [ -z "$KEY" ]; then
+            echo "::warning::VITE_WEB3FORMS_KEY secret is not set, so the contact form can't send enquiries."
+          fi
 
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

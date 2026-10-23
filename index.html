@@ -8,35 +8,21 @@
       name="description"
       content="Own a proven brand without the guesswork. Unnati Ladder matches entrepreneurs with franchise brands and handles planning, paperwork and launch. Pune, India."
     />
+    <!-- Title, description, og:* and canonical are rewritten per route by scripts/route-pages.mjs -->
+    <link rel="canonical" href="https://unnatiladder.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Unnati Ladder" />
+    <meta property="og:url" content="https://unnatiladder.com/" />
     <meta property="og:title" content="Unnati Ladder | Growing Together" />
     <meta property="og:description" content="Franchise and business consultancy based in Pune, India." />
-    <meta property="og:image" content="/logo.svg" />
+    <!-- Social apps need an absolute PNG/JPG; they don't render SVG -->
+    <meta property="og:image" content="https://unnatiladder.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Unnati Ladder – Growing Together. Franchise & business consultancy, Pune." />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Unnati Ladder",
-        "slogan": "Growing Together",
-        "url": "https://unnatiladder.com",
-        "telephone": "+91-9326950999",
-        "email": "info@unnatiladder.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "LG-03, East Court, Phoenix Market City, Viman Nagar",
-          "addressLocality": "Pune",
-          "postalCode": "411014",
-          "addressCountry": "IN"
-        },
-        "openingHours": "Mo-Sa 09:00-18:00"
-      }
-    </script>
+    <!-- Business details (JSON-LD) are added at build time from profile/content.json -->
   </head>
   <body>
     <div id="root"></div>
